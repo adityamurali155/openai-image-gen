@@ -1,12 +1,17 @@
+const path = require('path')
 const express = require("express")
 const dotenv = require("dotenv").config()
 
 const port = process.env.PORT || 3000
 
 const app = express();
+
 // Enable body parser
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+
+// Set up static folders
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/openai', require('./routes/openaiRoutes'));
 
