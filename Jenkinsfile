@@ -3,8 +3,7 @@ pipeline {
         node {
             label 'docker'
         }
-    }
-    
+    }   
     stages {
         stage ('Clone the repository') {
             steps {
