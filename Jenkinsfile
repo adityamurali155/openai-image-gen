@@ -12,7 +12,7 @@ pipeline {
         }
         stage ('Build docker image') {
             steps{
-                app = docker.build(registry + ":V$BUILD_NUMBER")
+                app = docker.build registry + ":V$BUILD_NUMBER"
             }
         }
         stage('Upload Image'){
