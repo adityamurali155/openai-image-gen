@@ -19,7 +19,7 @@ pipeline {
           steps{
             script {
               docker.withRegistry('', registryCred) {
-                dockerImage.push("V$BUILD_NUMBER")
+                app.push("V$BUILD_NUMBER")
               }
             }
           }
